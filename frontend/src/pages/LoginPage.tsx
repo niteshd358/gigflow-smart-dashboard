@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { useForm  } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
 import { loginSchema } from "../validators/authValidator";
@@ -26,7 +26,7 @@ const LoginPage = () => {
         try {
             const response = await loginUser(data);
             setAuth (response.user, response.token);
-
+            
             toast.success("Login successful");
             navigate("/dashboard");
         }

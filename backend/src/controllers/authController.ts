@@ -58,7 +58,7 @@ export const loginUser = async (req: Request,res: Response): Promise<void> => {
 
     if (!user) {
       res.status(401).json({
-        message: "Invalid email or user",
+        message: "Invalid email address",
       });
 
       return;

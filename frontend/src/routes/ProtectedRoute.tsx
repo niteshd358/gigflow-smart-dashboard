@@ -10,9 +10,10 @@ const ProtectedRoute = () => {
         (state)=>state.token
     );
 
-    return token ? (<Outlet /> ) : ( 
-        <Navigate to="/login" replace />
-    );
+    if(!token){
+        return <Navigate to="/login" replace={true} />
+    }
+    return <Outlet />
 };
 
 export default ProtectedRoute;
